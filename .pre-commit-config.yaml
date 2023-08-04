@@ -1,0 +1,36 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.5.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-added-large-files
+        args: [--maxkb=1024]
+
+-   repo: https://github.com/psf/black
+    rev: 23.3.0
+    hooks:
+      - id: black
+
+-   repo: https://github.com/PyCQA/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        args: ["--profile", "black", "--filter-files"]
+
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: 'v0.761'  # Use the sha / tag you want to point at
+    hooks:
+    -   id: mypy
+        args: ["--scripts-are-modules"]  # by default there is also "--ignore-missing-imports"
+        exclude: "doc"
+
+-   repo: https://github.com/astral-sh/ruff-pre-commit
+    # Ruff version.
+    rev: v0.0.282
+    hooks:
+      - id: ruff
+        types_or: [python, pyi]

@@ -1,0 +1,19 @@
+name: harmonious_inference_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - jupyter=1.0.0
+  - matplotlib=3.0.0
+  - mypy=1.4.1
+  - notebook=7.0.0
+  - numpy=1.21.2
+  - pip
+  - pip:
+    - sbi==0.21.0
+    - getdist==1.4.1
+  - python=3.11
+  - pytest=7.0.0
+  - ruff=0.0.282
+  - scipy=1.8.0
+  - pytorch

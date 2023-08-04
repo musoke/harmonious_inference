@@ -1,0 +1,5 @@
+[tool.ruff]
+include = ["*.py", "*.pyi", "**/pyproject.toml", ]
+
+[tool.ruff.pydocstyle]
+convention = "numpy"
